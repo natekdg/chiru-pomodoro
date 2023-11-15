@@ -1,6 +1,6 @@
 let isRunning = false;
-let time;
-let timeRemaining = 25 * 60; // 25 minutes
+let timer;
+let timeRemaining = 15 * 60; // 25 minutes
 
 const timeDisplay = document.getElementById('time');
 const startButton = document.getElementById('start');
@@ -19,10 +19,32 @@ function updateDisplay() {
 
 function tick() {
     if (timeRemaining > 0) {
-        timeRemaining0--;
+        timeRemaining--;
         updateDisplay();
     } else {
         stopTimer();
         alert('Timer is done!');
     }
 }
+
+function startTimer()   {
+    if (!isRunning) {
+        isRunning = true;
+        timer = setInterval(tick, 1000);
+    }
+}
+
+function stopTimer()    {
+    if (isRunning) {
+        clearInterval(timer);
+        isRunning = false;
+    }
+}
+
+function resetTimer()   {
+    stopTimer();
+    timeRemaining = 15 * 60;    // reset timer to 25 minutes
+    updateDisplay();
+}
+
+updateDisplay();        // update the display at start
