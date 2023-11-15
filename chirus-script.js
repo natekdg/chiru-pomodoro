@@ -20,7 +20,7 @@ function updateDisplay() {
 function tick() {
     if (timeRemaining > 0) {
         timeRemaining0--;
-        updateDsiplay():
+        updateDisplay();
     } else {
         stopTimer();
         alert('Timer is done!');
