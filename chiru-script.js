@@ -1,6 +1,6 @@
 let isRunning = false;
 let timer;
-let timeRemaining = 15 * 60; // 25 minutes
+let timeRemaining = 25 * 60; // 25 minutes
 
 const timeDisplay = document.getElementById('time');
 const startButton = document.getElementById('start');
@@ -17,6 +17,7 @@ function updateDisplay() {
     timeDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
+// tick function to check if timer is greater or less than 0
 function tick() {
     if (timeRemaining > 0) {
         timeRemaining--;
@@ -27,6 +28,7 @@ function tick() {
     }
 }
 
+// function to start the timer
 function startTimer()   {
     if (!isRunning) {
         isRunning = true;
@@ -34,6 +36,7 @@ function startTimer()   {
     }
 }
 
+// function to stop the timer
 function stopTimer()    {
     if (isRunning) {
         clearInterval(timer);
@@ -41,6 +44,7 @@ function stopTimer()    {
     }
 }
 
+// function to reset timer
 function resetTimer()   {
     stopTimer();
     timeRemaining = 15 * 60;    // reset timer to 25 minutes
@@ -48,3 +52,16 @@ function resetTimer()   {
 }
 
 updateDisplay();        // update the display at start
+
+// ask user to allow/denie notifications for chiru pomodoro
+document.addEventListener('DOMContentLoaded', (event) => {
+    if (Notification.permission !== "granted" && Notification.permission !== "denied"){
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                console.log("Notifications for Chiru have been allowed.");
+            } else {
+                console.log("Notifications for Chiru have been denied.")
+            }
+        })
+    }
+})
