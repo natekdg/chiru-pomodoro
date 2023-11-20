@@ -12,7 +12,12 @@
 
 <div id="chiru-pomodoro">
     <div id="timer">
-        <span id="time">25:00</span>            <!-- create first timer function for 15 minutes -->
+        <span id="time">25:00</span>            <!-- create first timer function for 25 minutes -->
+        <div id="time-options" class="time-dropdown" style="display: none;">
+            <div class="time-option" data-time="15">15 minutes</div>
+            <div class="time-option" data-time="25">25 minutes</div>
+            <div class="time-option" data-time="30">30 minutes</div>
+        </div>
     </div>
     <div id="controls">
         <button id="start">Start</button>
@@ -20,6 +25,9 @@
         <button id="reset">Reset</button>           <!-- assign id to reset button-->
     </div>
 </div>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjyIOiIO+JFfNtCkvwo11w1IUnbQhWjpy5GfJj6Cp0Y4S5f3QO09hF" crossorigin="anonymous"></script>
 <script src="chiru-script.js"></script>
 </body>

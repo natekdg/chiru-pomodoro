@@ -47,7 +47,7 @@ function stopTimer()    {
 // function to reset timer
 function resetTimer()   {
     stopTimer();
-    timeRemaining = 15 * 60;    // reset timer to 25 minutes
+    timeRemaining = 25 * 60;    // reset timer to 25 minutes
     updateDisplay();
 }
 
@@ -65,3 +65,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
     }
 })
+
+
+
+// toggle dropdown list on timer click
+timeDisplay.addEventListener('click', function() {
+    const timeOptions = document.getElementById('time-options');
+    timeOptions.style.display = timeOptions.style.display === 'none' ? 'block' : 'none';
+});
+
+// update timer when a time option is selected
+document.querySelectorAll('.time-option').forEach(item => {
+    item.addEventListener('click', function() {
+        let time = parseInt(this.getAttribute('data-time'));
+        timeRemaining = time * 60;      // convert the minutes to seconds
+        updateDisplay();
+        document.getElementById('time-options').style.display = 'none';     // hide the dropdown
+    });
+});
+
+window.onclick = function(event) {
+    if (!event.target.matches('#time')) {
+        var dropdowns = document.getElementsByClassName("time-dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
+            }
+        }
+    }
+};
+
