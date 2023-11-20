@@ -5,7 +5,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Chivo', sans-serif;
+    background-color: #050404;
 }
 
 #chiru-pomodoro {
@@ -13,27 +14,46 @@ body, html {
 }
 
 #timer {
-    font-size: 48px;
-    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    font-size: 35px; /* Adjust as needed */
+    color: #ffffff; /* Light text color for contrast */
+    background-color: #33333300; /* Dark background for the timer */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    font-family: 'Chivo', sans-serif;
 }
 
+/* time dropdown main styling*/
 .time-dropdown {
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%); /* center the drop */
+    background-color: #2B2B2B; /* dark backround for drop */
+    min-width: 160px;   /* set minimum width to 160 */
+    margin-top: 5px; /* space between timer and dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 1000; /* make sure above content */
+    display: none; /* hidden first */
 }
 
+/* time dropdown styling */
 .time-option {
-    color: black;
-    padding: 12px 16px;
+    color: #E0E0E0; /* light color for contrast */
+    padding: 10px 20px;
+    text-align: center;
     text-decoration: none;
+    font-size: 20px;
     display: block;
+    border-bottom: 1px solid #484848; /* options border/divider */
+    font-family: 'Chivo', sans-serif;
 }
 
 .time-option:hover {
-    background-color: #f1f1f1;
+    background-color: #383838;
 }
 
 /* General button styling */
@@ -46,6 +66,7 @@ body, html {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: 'Chivo', sans-serif;
 }
 
 #start {
