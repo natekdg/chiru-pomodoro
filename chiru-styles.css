@@ -7,6 +7,7 @@ body, html {
     align-items: center;
     font-family: 'Chivo', sans-serif;
     background-color: #050404;
+    scroll-behavior: smooth;
 }
 
 #chiru-pomodoro {
@@ -50,6 +51,7 @@ body, html {
     display: block;
     border-bottom: 1px solid #484848; /* options border/divider */
     font-family: 'Chivo', sans-serif;
+
 }
 
 .time-option:hover {
@@ -70,15 +72,16 @@ body, html {
 }
 
 #start {
-    background-color: #1b691e; /* Green */
+    background-color: #084924b1;
+
 }
 
 #stop {
-    background-color: #c52317; /* Red */
+    background-color: #5a130eb6;
 }
 
 #reset {
-    background-color: #f3b251; /* Orange */
+    background-color: #988410b0;
 }
 
 /* Hover effect */
@@ -92,4 +95,3 @@ body, html {
     outline: none;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
 }
-
