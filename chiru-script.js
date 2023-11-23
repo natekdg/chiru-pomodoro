@@ -2,14 +2,16 @@ let isRunning = false;
 let timer;
 let timeRemaining = 25 * 60; // 25 minutes
 
-const timeDisplay = document.getElementById('time');
-const startButton = document.getElementById('start');
-const stopButton = document.getElementById('stop');
-const resetButton = document.getElementById('reset');
+const timeDisplay = document.getElementById('time');        // set the label "time" to "timeDisplay"
+const startButton = document.getElementById('start');       // set the label "start" to "startButton"
+const stopButton = document.getElementById('stop');     // set the label "stop" to "stopButton"
+const resetButton = document.getElementById('reset');       // set the label "reset" to "resetButton"
+const settingsButton = document.getElementById('settings');     // set the label "settings" to "settingsButton"
 
-startButton.addEventListener('click', startTimer);
-stopButton.addEventListener('click', stopTimer);
-resetButton.addEventListener('click', resetTimer);
+startButton.addEventListener('click', startTimer);      // wait/listen for click on "startButton" icon from user and when clicked will start timer
+stopButton.addEventListener('click', stopTimer);        // wait/listen for click on "stopButton" icon from user and when clicked will stop timer
+resetButton.addEventListener('click', resetTimer);      // wait/lsiten for click on "resetButton" icon from user and when clicked will reset timer
+
 
 function updateDisplay() {
     const minutes = Math.floor(timeRemaining / 60);
@@ -19,17 +21,18 @@ function updateDisplay() {
 
 // tick function to check if timer is greater or less than 0
 function tick() {
-    if (timeRemaining > 0) {
+    if (timeRemaining > 0) {        // if the time is greater than 0 update the timer
         timeRemaining--;
         updateDisplay();
     } else {
-        stopTimer();
+        stopTimer();        // if timer is = 0, stop and display notification
         alert('Timer is done!');
     }
 }
 
 
-// function to start the timer
+
+// when clicked function to start the timer
 function startTimer()   {
     if (!isRunning) {
         isRunning = true;
@@ -37,7 +40,7 @@ function startTimer()   {
     }
 }
 
-// function to stop the timer
+// when cicked function to stop the timer
 function stopTimer()    {
     if (isRunning) {
         clearInterval(timer);
@@ -67,7 +70,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 })
 
-const settingsButton = document.getElementById('settings');
 
 // add click funtion for when settings is clicked
 settingsButton.addEventListener('click', function() {
@@ -88,7 +90,6 @@ window.onclick = function(event) {
     }
 };
 
-
 // update timer when a time option is selected
 document.querySelectorAll('.time-option').forEach(item => {
     item.addEventListener('click', function() {
@@ -98,4 +99,6 @@ document.querySelectorAll('.time-option').forEach(item => {
         document.getElementById('time-options').style.display = 'none';     // hide the dropdown
     });
 });
+
+
 
