@@ -28,6 +28,7 @@ function tick() {
     }
 }
 
+
 // function to start the timer
 function startTimer()   {
     if (!isRunning) {
@@ -66,13 +67,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 })
 
+const settingsButton = document.getElementById('settings');
 
-
-// toggle dropdown list on timer click
-timeDisplay.addEventListener('click', function() {
+// add click funtion for when settings is clicked
+settingsButton.addEventListener('click', function() {
     const timeOptions = document.getElementById('time-options');
     timeOptions.style.display = timeOptions.style.display === 'none' ? 'block' : 'none';
 });
+
+// when settings icon is clicked, execute the dropdown menu
+window.onclick = function(event) {
+    if (!event.target.matches('#time') && !event.target.matches('#settings') && !event.target.closest('#settings')) {
+        var dropdowns = document.getElementsByClassName("time-dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
+            }
+        }
+    }
+};
+
 
 // update timer when a time option is selected
 document.querySelectorAll('.time-option').forEach(item => {
@@ -83,16 +98,4 @@ document.querySelectorAll('.time-option').forEach(item => {
         document.getElementById('time-options').style.display = 'none';     // hide the dropdown
     });
 });
-
-window.onclick = function(event) {
-    if (!event.target.matches('#time')) {
-        var dropdowns = document.getElementsByClassName("time-dropdown");
-        for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.style.display === "block") {
-                openDropdown.style.display = "none";
-            }
-        }
-    }
-};
 

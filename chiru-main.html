@@ -17,18 +17,27 @@
     <div id="chiru-pomodoro">
         <div id="timer">
             <span id="time">25:00</span>            <!-- create first timer function for 25 minutes -->
-            <div id="time-options" class="time-dropdown" style="display: none;">
-                <div class="time-option" data-time="15">15:00</div>
-                <div class="time-option" data-time="25">25:00</div>
-                <div class="time-option" data-time="30">30:00</div>
-                <div class="time-option" data-time="45">45:00</div>
-                <div class="time-option" data-time="60">60:00</div>
-            </div>
         </div>
     <div id="controls">
-        <button id="start">Start</button>       <!-- assign id to start button-->
-        <button id="stop">Stop</button>         <!-- assign id to stop button-->
-        <button id="reset">Reset</button>           <!-- assign id to reset button-->
+        <button id="start">
+            <span class="material-symbols-outlined">play_circle</span>
+        </button>       <!-- assign id to start button and display play button icon-->
+        <button id="stop">
+            <span class="material-symbols-outlined">stop_circle</span>
+        </button>         <!-- assign id to stop button-->
+        <button id="reset">
+            <span class="material-symbols-outlined">restart_alt</span>
+        </button>           <!-- assign id to reset button-->
+        <button id="settings"
+            <span class="material-symbols-outlined">timelapse</span>
+        </button>
+        <div id="time-options" class="time-dropdown" style="display: none;">
+            <div class="time-option" data-time="15">15:00</div>
+            <div class="time-option" data-time="25">25:00</div>
+            <div class="time-option" data-time="30">30:00</div>
+            <div class="time-option" data-time="45">45:00</div>
+            <div class="time-option" data-time="60">60:00</div>
+        </div>
     </div>
 </div>
 

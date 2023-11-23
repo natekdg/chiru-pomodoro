@@ -49,8 +49,9 @@ body, html {
     text-decoration: none;
     font-size: 20px;
     display: block;
-    border-bottom: 1px solid #484848; /* options border/divider */
+    border-bottom: 1px solid #7b7979; /* options border/divider */
     font-family: 'Chivo', sans-serif;
+    border-radius: 5px;
 
 }
 
@@ -60,35 +61,25 @@ body, html {
 
 /* General button styling */
 #controls button {
-    padding: 10px 20px;
+    display: inline-flex;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease, font-size 0.3s ease;
+    align-items: center;
+    padding: 5px 10px;
     border: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
     border-radius: 5px;
+    background-color: #7b7979; /* Light grey background */
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Chivo', sans-serif;
-}
-
-#start {
-    background-color: #084924b1;
-
-}
-
-#stop {
-    background-color: #5a130eb6;
-}
-
-#reset {
-    background-color: #988410b0;
-}
+    margin-right: 5px; /* Space between buttons */
+    user-select: none;
+  }
 
 /* Hover effect */
 #controls button:hover {
     opacity: 0.9;
     transform: scale(1.05);
-}
+    background-color: #e0e0e0;
+    font-size: 24px; /* If you want to change font size on hover */
+  }
 
 /* Active/Focus effect */
 #controls button:active, #controls button:focus {
