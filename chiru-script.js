@@ -13,6 +13,7 @@ stopButton.addEventListener('click', stopTimer);        // wait/listen for click
 resetButton.addEventListener('click', resetTimer);      // wait/lsiten for click on "resetButton" icon from user and when clicked will reset timer
 
 
+// update to show current time to user
 function updateDisplay() {
     const minutes = Math.floor(timeRemaining / 60);
     const seconds = timeRemaining % 60;

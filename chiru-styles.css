@@ -18,42 +18,41 @@ body, html {
 #timer {
     position: relative;
     text-align: center;
-    font-size: 45px; /* Adjust as needed */
-    color: #ffffff; /* Light text color for contrast */
-    background-color: #33333300; /* Dark background for the timer */
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     user-select: none; /* Prevent text selection */
+    color: #ffffff; /* Light text color for contrast */
+    background-color: #33333300; /* Dark background for the timer */
     font-family: 'Chivo', sans-serif;
-}
+    font-size: 45px; /* Adjust as needed */
+}   
 
 /* time dropdown main styling*/
 .time-dropdown {
     position: absolute;
     left: 50%;
     transform: translateX(-50%); /* center the drop */
-    background-color: #2B2B2B; /* dark backround for drop */
     min-width: 160px;   /* set minimum width to 160 */
     margin-top: 5px; /* space between timer and dropdown */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     z-index: 1000; /* make sure above content */
     display: none; /* hidden first */
+    background-color: #2B2B2B; /* dark backround for drop */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* time dropdown styling */
 .time-option {
-    color: #E0E0E0; /* light color for contrast */
     padding: 10px 20px;
+    border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    font-size: 20px;
     display: block;
+    color: #E0E0E0; /* light color for contrast */
     border-bottom: 1px solid #464646; /* options border/divider */
+    font-size: 20px;
     font-family: 'Chivo', sans-serif;
-    border-radius: 5px;
-
 }
 
 .time-option:hover {
@@ -62,16 +61,16 @@ body, html {
 
 /* General button styling */
 #controls button {
-    display: inline-flex;
     transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease, font-size 0.3s ease;
     align-items: center;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #7b7979; /* Light grey background */
     cursor: pointer;
     margin-right: 5px; /* Space between buttons */
     user-select: none;
+    display: inline-flex;
+    background-color: #7b7979; /* Light grey background */
   }
 
 /* Hover effect */
