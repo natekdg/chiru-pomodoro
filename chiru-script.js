@@ -1,6 +1,6 @@
 let isRunning = false;
 let timer;
-let timeRemaining = 25 * 60; // 25 minutes
+let timeRemaining = 0.5 * 60; // 25 minutes
 
 const timeDisplay = document.getElementById('time');        // set the label "time" to "timeDisplay"
 const startButton = document.getElementById('start');       // set the label "start" to "startButton"
@@ -26,8 +26,10 @@ function tick() {
         timeRemaining--;
         updateDisplay();
     } else {
+        document.getElementById('timer-end-sound').play();
         stopTimer();        // if timer is = 0, stop and display notification
-        alert('Timer is done!');
+        alert('Good work!');
+        timeDisplay.textContent = "Good Work :)";
     }
 }
 
