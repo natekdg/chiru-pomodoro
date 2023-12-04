@@ -1,6 +1,6 @@
 let isRunning = false;
 let timer;
-let timeRemaining = 0.5 * 60; // 25 minutes
+let timeRemaining = 25 * 60; // 25 minutes
 
 const timeDisplay = document.getElementById('time');        // set the label "time" to "timeDisplay"
 const startButton = document.getElementById('start');       // set the label "start" to "startButton"
