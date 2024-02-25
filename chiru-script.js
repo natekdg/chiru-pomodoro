@@ -43,7 +43,7 @@ function startTimer()   {
     }
 }
 
-// when cicked function to stop the timer
+// when clicked function to stop the timer
 function stopTimer()    {
     if (isRunning) {
         clearInterval(timer);
@@ -103,5 +103,5 @@ document.querySelectorAll('.time-option').forEach(item => {
     });
 });
 
-
+/* js code for circle countdown */
 
